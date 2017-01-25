@@ -1,0 +1,117 @@
+{% extends "navbar.html" %}
+{% block rankings %}active{% endblock %}
+{% block content %}
+<div id="index-banner" class="container ">
+  <div class="nav-wrapper center section">
+    <h2><a class="page-title">Rankings {{ year }}</a></h2>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s6"><a class="active" href="#basketball">Basketball</a></li>
+        <!-- <li class="tab col s6"><a href="#football">Football</a></li> -->
+      </ul>
+    </div>
+  </div>
+  <!-- <h3 class="blue-text center">Week</h3>
+  <div class="row" id="basketball">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s1"><a class="active" href="#week1">1</a></li>
+        <li class="tab col s1"><a href="#week2">2</a></li>
+        <li class="tab col s1"><a href="#week3">3</a></li>
+        <li class="tab col s1"><a href="#week4">4</a></li>
+        <li class="tab col s1"><a href="#week5">5</a></li>
+        <li class="tab col s1"><a href="#week6">6</a></li>
+        <li class="tab col s1"><a href="#week7">7</a></li>
+        <li class="tab col s1"><a href="#week8">8</a></li>
+        <li class="tab col s1"><a href="#week9">9</a></li>
+        <li class="tab col s1"><a href="#week10">10</a></li>
+        <li class="tab col s1"><a href="#week11">11</a></li>
+        <li class="tab col s1"><a href="#week12">12</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row" id="football">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s1"><a class="active" href="#week1">1</a></li>
+        <li class="tab col s1"><a href="#week2">2</a></li>
+        <li class="tab col s1"><a href="#week3">3</a></li>
+        <li class="tab col s1"><a href="#week4">4</a></li>
+        <li class="tab col s1"><a href="#week5">5</a></li>
+        <li class="tab col s1"><a href="#week6">6</a></li>
+        <li class="tab col s1"><a href="#week7">7</a></li>
+        <li class="tab col s1"><a href="#week8">8</a></li>
+        <li class="tab col s1"><a href="#week9">9</a></li>
+        <li class="tab col s1"><a href="#week10">10</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <table class="striped">
+    <thead>
+      <tr>
+          <th data-field="rank" class="blue lighten-5">NetRank</th>
+          <th data-field="team" class="blue lighten-5">Team</th>
+          <th data-field="team" class="red lighten-5">RPI Rank</th>
+          <th data-field="team" class="red lighten-5">Team</th>
+          <th data-field="rank">AP Rank</th>
+          <th data-field="team">Team</th>
+      </tr>
+    </thead>
+    <tbody id="basketball">
+      {% if bball and ap and rpi %}
+        {% for rank in range(length) %}
+          <tr>
+            <!-- Our RANKINGS -->
+            {% if rank % 2 == 0 %}
+              <td class="blue lighten-4">{{ bball[rank][0] }}</td>
+              <!-- Proper capitalization and naming -->
+              <td class="blue lighten-4">{{ ' '.join(bball[rank][1].title().split('-')) }}</td>
+            {% else %}
+            <td class="blue lighten-5">{{ bball[rank][0] }}</td>
+            <!-- Proper capitalization and naming -->
+            <td class="blue lighten-5">{{ ' '.join(bball[rank][1].title().split('-')) }}</td>
+            {% endif %}
+            {% if rank % 2 == 0 %}
+            <!-- RPI RANKINGS -->
+              <td class="red lighten-4">{{ rpi[rank][0] }}</td>
+              <!-- Proper capitalization and naming -->
+              <td class="red lighten-4">{{ ' '.join(rpi[rank][1].title().split('-')) }}</td>
+            {% else %}
+              <!-- RPI RANKINGS -->
+              <td class="red lighten-5">{{ rpi[rank][0] }}</td>
+              <!-- Proper capitalization and naming -->
+              <td class="red lighten-5">{{ ' '.join(rpi[rank][1].title().split('-')) }}</td>
+            {% endif %}
+            {% if rank < 25 %}
+              <td>{{ ap[rank][0] }}</td>
+              <!-- Proper capitalization and naming -->
+              <td>{{ ' '.join(ap[rank][1].title().split('-')) }}</td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      {% endif %}
+    </tbody>
+    <tbody id="football">
+      {% if fball %}
+        {% for rank in fball %}
+          <tr>
+            <td>{{ rank['rank'] }}</td>
+            <!-- Proper capitalization and naming -->
+            <td>{{ ' '.join(rank['team'].title().split('-')) }}</td>
+          </tr>
+        {% endfor %}
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+<footer class="page-footer transparent" id="about-us">
+  <div class="container">
+    <div class="row">
+    </div>
+  </div>
+</footer>
+{% endblock %}

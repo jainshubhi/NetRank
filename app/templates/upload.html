@@ -1,0 +1,76 @@
+{% extends "navbar.html" %}
+{% block upload %}active{% endblock %}
+{% block content %}
+<div id="index-banner" class="container ">
+  <div class="nav-wrapper center section">
+    <h2><a class="page-title">Rank Your Own League</a></h2>
+  </div>
+</div>
+<div class="container">
+  <div class="flow-text">
+    <p class="flow-text">Upload a csv file with your league data!</p>
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">File Format</span>
+        <table>
+          <thead>
+            <tr>
+                <th data-field="date">date</th>
+                <th data-field="team_1">team_1</th>
+                <th data-field="team_2">team_2</th>
+                <th data-field="margins">team_1_* - team_2_*</th>
+            </tr>
+          </thead>
+        </table>
+        <span>Example</span>
+        <table class="highlight">
+          <thead>
+            <tr>
+                <th data-field="date">date</th>
+                <th data-field="team_1">team_1</th>
+                <th data-field="team_2">team_2</th>
+                <th data-field="margins">margin_of_victory</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <form action="" method="post" enctype="multipart/form-data">
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="sport" type="text" class="validate" name="sport">
+        <label for="sport">Sport</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="season" type="number" class="validate" name="season">
+        <label for="season">Season</label>
+      </div>
+    </div>
+    <div class="input-field col s12">
+      <input id="email" type="email" class="validate" name="email">
+      <label for="email">Email</label>
+    </div>
+    <div class="file-field input-field">
+      <div class="btn blue">
+        <span>File</span>
+        <input id="file" type="file" name="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+    <button class="blue btn waves-effect waves-light" type="submit" name="action">Submit
+      <i class="material-icons right">send</i>
+    </button>
+  </form>
+</div>
+
+<footer class="page-footer transparent" id="about-us">
+  <div class="container">
+    <div class="row">
+    </div>
+  </div>
+</footer>
+{% endblock %}

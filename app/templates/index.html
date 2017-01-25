@@ -1,0 +1,74 @@
+{% extends "navbar.html" %}
+{% block content %}
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center blue-text">NetRank</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">The objective way to power rank teams in NCAA sports.</h5>
+        </div>
+        <div class="row center">
+          <a href="/rankings/2014" id="download-button" class="btn-large waves-effect waves-light blue ">Get Started</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="../static/images/background1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="icon-block">
+            <h2 class="center blue-text "><i class="material-icons">my_location</i></h2>
+            <h5 class="center">Power Rankings for NCAA D1 Teams</h5>
+
+            <p class="light">We've developed network-based algorithms (which you can find more info about <a href="#">here</a>) to <span style="font-weight:bold;">objectively</span> compute power rankings for NCAA sports. Right now, we only look at NCAA basketball and football, but we hope to add more sports soon!</p>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="icon-block">
+            <h2 class="center blue-text "><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Rapid Computation after Every Game</h5>
+
+            <p class="light">We don't wait until the end of the week to update our fans on how the power rankings for the season look. You can check to see how much your team needs to win by to move up in the power rankings, right from your browser.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <footer class="page-footer grey lighten-1 section scrollspy" id="about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6">
+          <h5 class="white-text">About Us</h5>
+          <p class="white-text text-lighten-4">We are a team of two Caltech students who absolutely love any and all sports. We developed the algorithms and application behind NetRank out of our mutual love for sports and mutual hate for the subjectivity of power rankings in NCAA sports. We hope you enjoy NetRank! You can donate to us <a href="#" class="blue-text text-darken-4">here</a>.</p>
+
+        </div>
+        <div class="col s12 m3">
+          <h5 class="white-text center">Shubhi Jain</h5>
+          <img class="responsive-img circle center" src="../static/images/shubhi_jain.jpg">
+        </div>
+        <div class="col s12 m3">
+          <h5 class="white-text center">Ricky Galliani</h5>
+          <img class="responsive-img circle center" src="../static/images/ricky_galliani.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright blue">
+      <div class="container">
+      Made with <a class="blue-text text-darken-4" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+{% endblock %}

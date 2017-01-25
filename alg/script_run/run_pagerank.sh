@@ -1,0 +1,14 @@
+python season_simulation.py -b -pr 2001;
+python season_simulation.py -b -pr 2002;
+python season_simulation.py -b -pr 2003;
+python season_simulation.py -b -pr 2004;
+python season_simulation.py -b -pr 2005;
+python season_simulation.py -b -pr 2006;
+python season_simulation.py -b -pr 2007;
+python season_simulation.py -b -pr 2008;
+python season_simulation.py -b -pr 2009;
+python season_simulation.py -b -pr 2010;
+python season_simulation.py -b -pr 2011;
+python season_simulation.py -b -pr 2012;
+python season_simulation.py -b -pr 2013;
+python season_simulation.py -b -pr 2014;
